@@ -1,22 +1,19 @@
 <p align="center">
-  <a href="https://templecheats.xyz">
-    <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/logo.png?raw=true" width="20%" alt="Logo">
-  </a>
-</p>
-<p align="center">
-  <a href="https://discord.gg/j6hTUB5GBx">
-    <img src="https://img.shields.io/discord/1125838140456849418?color=skyblue&logo=discord&logoColor=white" alt="Discord">
-  </a>
-</p>
-<p align="center">
-  An open-source external cheat base for Counter-Strike 2, written in C++.
+  <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/logo.png?raw=true" alt="Logo" width="20%">
 </p>
 
-## Prerequisites
+<h1 align="center">Counter-Strike 2 External Cheat Base</h1>
 
-- **C++ Version**: C++ 20
-- **Release**: x64
-- **DirectX Version**: DirectX 9
+<p align="center">An open-source external cheat base for Counter-Strike 2, written in C++.</p>
+
+<h2 align="center">Features</h2>
+
+<p align="center">
+  - Memory Reading/Writing<br>
+  - TriggerBot<br>
+  - Fov<br>
+  - Menu<br>
+</p>
 
 <h2 align="center">Showcase</h2>
 <p align="center">
