@@ -33,45 +33,59 @@ void hacks::VisualThread(const Memory& memory) noexcept
 
 void triggerbot::TriggerBot()
 {
-	static uintptr_t localPlayer = memory.Read<uintptr_t>(globals::client + offsets::dwLocalPlayerPawn);
-	static BYTE team = memory.Read<BYTE>(localPlayer + offsets::m_iTeamNum);
-	static uintptr_t entityList = memory.Read<uintptr_t>(globals::client + offsets::dwEntityList);
+    static uintptr_t localPlayer = memory.Read<uintptr_t>(globals::client + offsets::dwLocalPlayerPawn);
+    static BYTE team = memory.Read<BYTE>(localPlayer + offsets::m_iTeamNum);
+    static uintptr_t entityList = memory.Read<uintptr_t>(globals::client + offsets::dwEntityList);
 
-	int crosshairEntityIndex = memory.Read<int>(localPlayer + offsets::m_iIDEntIndex);
-	if (crosshairEntityIndex == 0)
-		return;
+    int crosshairEntityIndex = memory.Read<int>(localPlayer + offsets::m_iIDEntIndex);
+    if (crosshairEntityIndex == 0)
+        return;
 
-	uintptr_t listEntry = memory.Read<uintptr_t>(entityList + 0x8 * (crosshairEntityIndex >> 9) + 0x10);
-	uintptr_t entity = memory.Read<uintptr_t>(listEntry + 120 * (crosshairEntityIndex & 0x1ff));
+    uintptr_t listEntry = memory.Read<uintptr_t>(entityList + 0x8 * (crosshairEntityIndex >> 9) + 0x10);
+    uintptr_t entity = memory.Read<uintptr_t>(listEntry + 120 * (crosshairEntityIndex & 0x1ff));
 
-	if (!entity)
-		return;	
-	if (!team == memory.Read<BYTE>(entity + offsets::m_iTeamNum))
-		return;
-	if (memory.Read<int>(entity + offsets::m_iHealth) <= 0)
-		return;
+    if (!entity)
+        return;
+    if (!team == memory.Read<BYTE>(entity + offsets::m_iTeamNum))
+        return;
+    if (memory.Read<int>(entity + offsets::m_iHealth) <= 0)
+        return;
 
-	std::this_thread::sleep_for(std::chrono::milliseconds(globals::TriggerBotDelay));
-	memory.Write<int>(globals::client + offsets::attack, 65537);
-	std::this_thread::sleep_for(std::chrono::milliseconds(globals::TriggerBotDelay));
-	memory.Write<int>(globals::client + offsets::attack, 256);
-	std::this_thread::sleep_for(std::chrono::milliseconds(globals::TriggerBotDelay));
+    std::this_thread::sleep_for(std::chrono::milliseconds(globals::TriggerBotDelay));
+    memory.Write<int>(globals::client + offsets::attack, 65537);
+    std::this_thread::sleep_for(std::chrono::milliseconds(globals::TriggerBotDelay));
+    memory.Write<int>(globals::client + offsets::attack, 256);
+    std::this_thread::sleep_for(std::chrono::milliseconds(globals::TriggerBotDelay));
 }
 
 void hacks::AimThread(const Memory& memory) noexcept
 {
-	while (gui::isRunning)
-	{
-		if (globals::TriggerBot)
-		{
-			if (GetAsyncKeyState(VK_LSHIFT))
-			{
-				triggerbot::TriggerBot();
-			}
-		}
+    while (gui::isRunning)
+    {
+        if (globals::TriggerBot)
+        {
+            if (globals::TriggerBotMode == 0) {
+                if (GetAsyncKeyState(VK_LSHIFT))
+                {
+                    triggerbot::TriggerBot();
+                }
+            }
+            else if (globals::TriggerBotMode == 1) {
+                if (GetAsyncKeyState(VK_LSHIFT) & 0x8000)
+                {
+                    globals::TriggerBotToggled = !globals::TriggerBotToggled;
+                    std::this_thread::sleep_for(std::chrono::milliseconds(200));
+                }
+                if (globals::TriggerBotToggled)
+                {
+                    triggerbot::TriggerBot();
+                }
+            }
+        }
 
-		std::this_thread::sleep_for(std::chrono::milliseconds(1));
-	}
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
+    }
 }
+
 
 

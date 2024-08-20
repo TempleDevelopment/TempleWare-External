@@ -294,6 +294,10 @@ void gui::Render() noexcept {
             ImGui::Checkbox("TriggerBot", &globals::TriggerBot);
             ImGui::SameLine();
             ImGui::Text("[L-Shift]");
+
+            const char* items[] = { "Hold", "Toggle" };
+            ImGui::Combo("Mode", &globals::TriggerBotMode, items, IM_ARRAYSIZE(items));
+
             if (globals::TriggerBot) {
                 ImGui::SliderInt("Delay (MS)", &globals::TriggerBotDelay, 1, 100);
             }
@@ -310,7 +314,6 @@ void gui::Render() noexcept {
                 globals::Rainbow = false;
             }
             ImGui::Checkbox("Rainbow", &globals::Rainbow);
-
             ImGui::EndTabItem();
         }
         ImGui::EndTabBar();
@@ -326,7 +329,7 @@ void gui::Render() noexcept {
     }
 
     ApplyCustomStyle();
-}
+}       
 
 void gui::ApplyCustomStyle() noexcept {
     ImGuiStyle* style = &ImGui::GetStyle();
