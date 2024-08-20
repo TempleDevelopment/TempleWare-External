@@ -15,14 +15,14 @@
 
 <h2>Showcase</h2>
 <p align="center">
-  <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/ingame.png?raw=true" alt="Feature Image 4" width="50%">
+  <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/ingame.png?raw=true" alt="Feature Image 4" width="80%">
 </p>
 
 <details>
   <summary><h2 align="center">Menu</h2></summary>
   <p align="center">
-    <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/combat.png?raw=true" alt="Feature Image 1" width="30%">
-    <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/visuals.png?raw=true" alt="Feature Image 2" width="30%">
-    <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/misc.png?raw=true" alt="Feature Image 3" width="30%">
+    <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/combat.png?raw=true" alt="Feature Image 1" width="50%">
+    <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/visuals.png?raw=true" alt="Feature Image 2" width="50%">
+    <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/misc.png?raw=true" alt="Feature Image 3" width="50%">
   </p>
 </details>
