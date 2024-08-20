@@ -37,4 +37,5 @@ namespace globals {
     inline int TriggerBotDelay = 20;
     inline std::uintptr_t client = 0;
     inline ImVec4 MenuAccentColor = ImVec4(0.26f, 0.59f, 0.98f, 1.00f);
+    inline bool Rainbow = false;
 }

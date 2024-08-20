@@ -279,18 +279,6 @@ void gui::SetupImGuiStyle() noexcept {
     style->GrabRounding = 2.0f;
 }
 
-void gui::SetupImGuiFonts() noexcept {
-    ImGuiIO& io = ImGui::GetIO();
-    io.FontGlobalScale = 1.25f;
-    ImFont* font = io.Fonts->AddFontFromFileTTF("C:\\Windows\\Fonts\\Verdana.ttf", 18.0f);
-    if (font == nullptr) {
-        OutputDebugStringA("Failed to load Verdana font\n");
-    }
-    else {
-        OutputDebugStringA("Verdana font loaded successfully.\n");
-    }
-}
-
 void gui::Render() noexcept {
     ImGui::SetNextWindowPos(ImVec2(0, 0), ImGuiCond_Always);
     ImGui::SetNextWindowSize(ImVec2(WIDTH, HEIGHT), ImGuiCond_Always);
@@ -316,14 +304,30 @@ void gui::Render() noexcept {
             ImGui::EndTabItem();
         }
         if (ImGui::BeginTabItem("Misc")) {
-            ImGui::ColorEdit4("Menu Accent Color", (float*)&globals::MenuAccentColor);
+            ImGui::Text("Menu Color");
+            ImGui::SameLine();
+            if (ImGui::ColorEdit4("##AccentColor", (float*)&globals::MenuAccentColor, ImGuiColorEditFlags_DisplayRGB | ImGuiColorEditFlags_NoOptions)) {
+                globals::Rainbow = false;
+            }
+            ImGui::Checkbox("Rainbow", &globals::Rainbow);
+
             ImGui::EndTabItem();
         }
         ImGui::EndTabBar();
     }
     ImGui::End();
+
+    if (globals::Rainbow) {
+        static float hue = 0.0f;
+        hue += ImGui::GetIO().DeltaTime * 0.1f;
+        if (hue > 1.0f) hue = 0.0f;
+        ImVec4 rainbowColor = ImColor::HSV(hue, 1.0f, 1.0f);
+        globals::MenuAccentColor = rainbowColor;
+    }
+
     ApplyCustomStyle();
 }
+
 void gui::ApplyCustomStyle() noexcept {
     ImGuiStyle* style = &ImGui::GetStyle();
     ImVec4* colors = style->Colors;
@@ -349,4 +353,3 @@ void gui::ApplyCustomStyle() noexcept {
     colors[ImGuiCol_SliderGrab] = accentColor;
     colors[ImGuiCol_SliderGrabActive] = accentColor;
 }
-
