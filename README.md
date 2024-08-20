@@ -6,16 +6,32 @@
 
 <p align="center">An open-source external cheat base for Counter-Strike 2, written in C++.</p>
 
-<h2>Features</h2>
+## Features
 
 - Memory Reading/Writing
 - TriggerBot
 - Fov
 - Menu
 
-<h2 align="center">Menu</h2>
-<p align="center">
-    <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/combat.png?raw=true" alt="Feature Image 1" width="60%">
-    <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/visuals.png?raw=true" alt="Feature Image 2" width="60%">
-    <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/misc.png?raw=true" alt="Feature Image 3" width="60%">
-</p>
+## Menu
+
+<details>
+  <summary>Combat</summary>
+  <p align="center">
+    <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/combat.png?raw=true" alt="Combat Feature" width="60%">
+  </p>
+</details>
+
+<details>
+  <summary>Visuals</summary>
+  <p align="center">
+    <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/visuals.png?raw=true" alt="Visuals Feature" width="60%">
+  </p>
+</details>
+
+<details>
+  <summary>Misc</summary>
+  <p align="center">
+    <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/misc.png?raw=true" alt="Misc Feature" width="60%">
+  </p>
+</details>
