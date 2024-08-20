@@ -12,7 +12,7 @@
 - **Menu**
 - **TriggerBot**
 - **Fov**
-- 
+  
 <details>
   <summary><strong>Showcase</strong></summary>
   <p align="center">
