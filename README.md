@@ -15,7 +15,7 @@
 
 <h2>Showcase</h2>
 <p align="center">
-  <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/ingame.png?raw=true" alt="Feature Image 4" width="80%">
+  <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/ingame.png?raw=true" alt="Feature Image 4" width="100%">
 </p>
 
 <details>
