@@ -10,9 +10,9 @@
 
 <p align="center">
   - Memory Reading/Writing<br>
-  - Menu<br>
   - TriggerBot<br>
   - Fov<br>
+  - Menu<br>
 </p>
 
 <h2 align="center">Showcase</h2>
