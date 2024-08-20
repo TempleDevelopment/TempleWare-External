@@ -16,5 +16,5 @@
 ## Menu
 
 <p align="center">
-  <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/menu.gif?raw=true" alt="Combat Feature" width="100%">
+  <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/menu.gif?raw=true" alt="Combat Feature" width="80%">
 </p>
