@@ -5,7 +5,7 @@
 <h1 align="center">Counter-Strike 2 External Cheat Base</h1>
 
 <p align="center">An open-source external cheat base for Counter-Strike 2, written in C++.</p>
-<p align="center"><a href="https://templecheats.xyz">By Temple Cheats.z</a>
+<p align="center"><a href="https://templecheats.xyz">Temple Cheats</a>
 
 <h2 align="center">Features</h2>
 
