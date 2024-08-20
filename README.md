@@ -13,6 +13,7 @@
 </p>
 
 ## Prerequisites
+|||
 |-|-|
 |C++ Version|C++ 20|
 |Release|x64|
