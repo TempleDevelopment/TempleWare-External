@@ -13,12 +13,10 @@
 </p>
 
 ## Prerequisites
-|||
-|-|-|
-|C++ Version|C++ 20|
-|Release|x64|
-|DirectX Version|DirectX 9|
 
+- **C++ Version**: C++ 20
+- **Release**: x64
+- **DirectX Version**: DirectX 9
 
 <h2 align="center">Showcase</h2>
 <p align="center">
