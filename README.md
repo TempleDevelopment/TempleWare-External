@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://templecheats.xyz">
-    <img src="github/Images/logo.png" style="width: 45%" alt="logo">
+    <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/logo.png?raw=true" style="width: 45%" alt="logo">
   </a>
   <a href="https://discord.gg/j6hTUB5GBx">
     <img src="https://img.shields.io/discord/1125838140456849418?color=skyblue&logo=discord&logoColor=white" alt="Discord">
