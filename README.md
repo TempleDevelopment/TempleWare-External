@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/logo.png?raw=true" alt="Logo" width="25%">
+  <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/logo.png?raw=true" alt="Logo" width="20%">
 </p>
 
-# Open-source Counter-Strike 2 Cheat Base
+<h1 align="center">Counter-Strike 2 External Cheat Base</h1>
 
-This repository contains an open-source cheat base for Counter-Strike 2, written in C++. It's designed to be easily customizable and extendable for game developers.
+<p align="center">This repository contains an open-source external cheat base for Counter-Strike 2, written in C++.
 
 ## Features
 
