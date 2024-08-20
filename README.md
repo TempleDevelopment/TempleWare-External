@@ -1,14 +1,17 @@
 <p align="center">
   <a href="https://templecheats.xyz">
-    <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/logo.png?raw=true" style="width: 45%" alt="logo">
+    <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/logo.png?raw=true" width="20%" alt="Logo">
   </a>
+</p>
+<p align="center">
   <a href="https://discord.gg/j6hTUB5GBx">
     <img src="https://img.shields.io/discord/1125838140456849418?color=skyblue&logo=discord&logoColor=white" alt="Discord">
   </a>
-  <p align="center">
-    An open-source external cheat base for Counter-Strike 2, written in C++.
-  </p>
 </p>
+<p align="center">
+  An open-source external cheat base for Counter-Strike 2, written in C++.
+</p>
+
 
 <h2 align="center">Features</h2>
 
