@@ -6,15 +6,21 @@
 
 <p align="center">An open-source external cheat base for Counter-Strike 2, written in C++.</p>
 
-## Features
+<h2 align="center">Features</h2>
 
-- Memory Reading/Writing
-- TriggerBot
-- Fov
-- Menu
+<div align="center">
+  <table>
+    <tr><td>Memory Reading/Writing</td></tr>
+    <tr><td>TriggerBot</td></tr>
+    <tr><td>Fov</td></tr>
+    <tr><td>Menu</td></tr>
+  </table>
+</div>
 
-## Menu
+<h2 align="center">Menu</h2>
 
 <p align="center">
-  <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/menu.gif?raw=true" alt="Combat Feature" width="100%">
+  <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/menu.gif?raw=true" alt="Combat Feature" width="70%">
 </p>
+
+<p align="center"><b>Disclaimer:</b> Use at your own risk.</p>
