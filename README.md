@@ -12,15 +12,12 @@
   An open-source external cheat base for Counter-Strike 2, written in C++.
 </p>
 
+## Prerequisites
+|-|-|
+|C++ Version|C++ 20|
+|Release|x64|
+|DirectX Version|DirectX 9|
 
-<h2 align="center">Features</h2>
-
-<p align="center">
-  - Memory Reading/Writing<br>
-  - TriggerBot<br>
-  - Fov<br>
-  - Menu<br>
-</p>
 
 <h2 align="center">Showcase</h2>
 <p align="center">
