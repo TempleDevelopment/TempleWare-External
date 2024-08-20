@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/logo.png?raw=true" alt="Logo">
+  <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/logo.png?raw=true" alt="Logo" width="50%">>
 </p>
 
 # Open-source Counter-Strike 2 Cheat Base
