@@ -22,3 +22,5 @@
 <p align="center">
   <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/menu.gif?raw=true" alt="Combat Feature" width="70%">
 </p>
+
+<p align="center"><b>Disclaimer:</b> Use at your own risk.</p>
