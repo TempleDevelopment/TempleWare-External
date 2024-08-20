@@ -8,14 +8,14 @@
 
 <h2 align="center">Features</h2>
 
-<p align="center">
+<div align="center">
   <table>
     <tr><td>Memory Reading/Writing</td></tr>
     <tr><td>TriggerBot</td></tr>
     <tr><td>Fov</td></tr>
     <tr><td>Menu</td></tr>
   </table>
-</p>
+</div>
 
 <h2 align="center">Menu</h2>
 
