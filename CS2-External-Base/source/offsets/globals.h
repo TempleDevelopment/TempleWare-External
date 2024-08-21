@@ -7,16 +7,16 @@
 
 namespace offsets {
     // Game offsets
-    constexpr std::ptrdiff_t dwLocalPlayerPawn = 0x17D4810;
-    constexpr std::ptrdiff_t dwEntityList = 0x1969518;
-    constexpr std::ptrdiff_t dwViewMatrix = 0x19CB4A0;
-    constexpr std::ptrdiff_t dwViewAngles = 0x19DA8F8;
+    constexpr std::ptrdiff_t dwLocalPlayerPawn = 0x17D3810;
+    constexpr std::ptrdiff_t dwEntityList = 0x1968518;
+    constexpr std::ptrdiff_t dwViewMatrix = 0x19CA4A0;
+    constexpr std::ptrdiff_t dwViewAngles = 0x19D98F8;
 
     // Player details
     constexpr std::ptrdiff_t m_pCameraServices = 0x1130;
     constexpr std::ptrdiff_t m_iFOV = 0x210;
     constexpr std::ptrdiff_t m_bIsScoped = 0x22A0;
-    constexpr std::ptrdiff_t attack = 0x17CD040;
+    constexpr std::ptrdiff_t attack = 0x17CC040;
     constexpr std::ptrdiff_t m_iIDEntIndex = 0x13A8;
     constexpr std::ptrdiff_t flFlashDuration = 0x1468;
 
