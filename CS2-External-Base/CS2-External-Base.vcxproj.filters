@@ -45,6 +45,9 @@
     <ClCompile Include="source\features\hacks.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\offsets\globals.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\menu\gui.h">

@@ -141,6 +141,7 @@
     <ClCompile Include="imgui\imgui_impl_win32.cpp" />
     <ClCompile Include="imgui\imgui_tables.cpp" />
     <ClCompile Include="imgui\imgui_widgets.cpp" />
+    <ClCompile Include="source\offsets\globals.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\features\triggerbot.h" />
