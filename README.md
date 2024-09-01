@@ -1,26 +1,46 @@
 <p align="center">
-  <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/logo.png?raw=true" alt="Logo" width="20%">
+  <a href="https://templecheats.xyz">
+    <img src="github/images/logo.png">
+  </a>
+</p> 
+<p align="center">
+  <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white">
+  <img src="https://img.shields.io/badge/Visual_Studio-5C2D91?style=for-the-badge&logo=visual%20studio&logoColor=white">
+  <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white">
+  <a href="https://discord.gg/j6hTUB5GBx" style="text-decoration: none;">
+    <img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white">
+  </a>
+  <img src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge&logo=&logoColor=whit">
 </p>
 
-<h1 align="center">Counter-Strike 2 External Cheat Base</h1>
+---
+### An open-source external cheat base for Counter-Strike 2, written in C++.
+---
 
-<p align="center">An open-source external cheat base for Counter-Strike 2, written in C++.</p>
+### Features
+<details>
+<summary>Visual</summary>
+  
+- No Flash
+- Fov Changer
+</details>
 
-<h2 align="center">Features</h2>
+<details>
+<summary>Trigger Bot</summary>
+- Shot Delay
+</details>
 
-<div align="center">
-  <table>
-    <tr><td>Memory Reading/Writing</td></tr>
-    <tr><td>TriggerBot</td></tr>
-    <tr><td>Fov</td></tr>
-    <tr><td>Menu</td></tr>
-  </table>
-</div>
+<details>
+<summary>Misc</summary>
+  
+- Menu Accent Color Selector
+- Rainbow Menu
+</details>
 
-<h2 align="center">Menu</h2>
+## Menu
 
 <p align="center">
-  <img src="https://github.com/PhilipPanda/CS2-External-Base/blob/main/Images/menu.gif?raw=true" alt="Combat Feature" width="70%">
+  <img src="./github/images/menu.gif" alt="Menu">
 </p>
 
 <p align="center"><b>Disclaimer:</b> Use at your own risk.</p>
