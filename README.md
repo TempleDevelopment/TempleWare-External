@@ -40,9 +40,7 @@
 </details>
 
 ## Menu
-
-<p align="center">
-  <img src="./github/images/menu.gif" alt="Menu">
-</p>
+:-:
+<img src="./github/images/menu.gif" alt="Menu">
 
 <p align="center"><b>Disclaimer:</b> Use at your own risk.</p>
