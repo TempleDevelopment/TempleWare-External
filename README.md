@@ -40,6 +40,6 @@
 </details>
 
 ## Menu
-<img src="./github/images/menu.gif" alt="Menu Screenshot" style="width: 100%; height: auto;">
+<img src="./github/images/menu.gif" alt="Menu Screenshot">
 
 <p align="center"><b>Disclaimer:</b> Use at your own risk.</p>
