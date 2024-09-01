@@ -5,19 +5,20 @@
 </p> 
 <p align="center">
   <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white">
-  <img src="https://img.shields.io/badge/Visual_Studio-5C2D91?style=for-the-badge&logo=visual%20studio&logoColor=white">
+  <img src="https://img.shields.io/badge/Visual_Studio-007ACC?style=for-the-badge&logo=visual%20studio&logoColor=white">
   <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white">
   <a href="https://discord.gg/j6hTUB5GBx" style="text-decoration: none;">
     <img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white">
   </a>
   <img src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge&logo=&logoColor=whit">
+  <img src="https://img.shields.io/badge/CS2-000000?style=for-the-badge&logo=counter-strike&logoColor=white">
 </p>
 
 ---
 ### An open-source external cheat base for Counter-Strike 2, written in C++.
 ---
 
-### Features
+## Features
 <details>
 <summary>Visual</summary>
   
@@ -38,10 +39,9 @@
 - Rainbow Menu
 </details>
 
-## Menu
-
-<p align="center">
-  <img src="./github/images/menu.gif" alt="Menu">
-</p>
+## Screenshots
+Menu|Preview
+:-:|:-:
+<img src="./github/images/menu.gif">|<img src="./github/images/preview.png">
 
 <p align="center"><b>Disclaimer:</b> Use at your own risk.</p>
