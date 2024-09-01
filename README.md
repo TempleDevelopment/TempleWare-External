@@ -39,8 +39,9 @@
 - Rainbow Menu
 </details>
 
-## Menu
-:-:
-<img src="./github/images/menu.gif" alt="Menu">
+## Screenshots
+Menu|Preview
+:-:|:-:
+<img src="./github/images/menu.gif">|<img src="./github/images/preview.png">
 
 <p align="center"><b>Disclaimer:</b> Use at your own risk.</p>
