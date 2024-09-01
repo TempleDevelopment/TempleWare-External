@@ -39,19 +39,7 @@
 - Rainbow Menu
 </details>
 
-## Screenshots
-
-<div style="display: flex; justify-content: center; align-items: center;">
-  <div style="border: 2px solid #ddd; padding: 10px; margin-right: 20px; max-width: 300px;">
-    <p style="text-align: center; font-weight: bold;">Menu</p>
-    <img src="./github/images/menu.gif" alt="Menu Screenshot" style="width: 100%; height: auto;">
-  </div>
-  <div style="border: 2px solid #ddd; padding: 10px; max-width: 300px;">
-    <p style="text-align: center; font-weight: bold;">Preview</p>
-    <img src="./github/images/preview.png" alt="Preview Screenshot" style="width: 100%; height: auto;">
-  </div>
-</div>
-
-
+## Menu
+<img src="./github/images/menu.gif" alt="Menu Screenshot" style="width: 100%; height: auto;">
 
 <p align="center"><b>Disclaimer:</b> Use at your own risk.</p>
