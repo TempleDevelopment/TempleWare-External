@@ -40,8 +40,17 @@
 </details>
 
 ## Screenshots
-Menu|Preview
-:-:|:-:
-<img src="./github/images/menu.gif">|<img src="./github/images/preview.png">
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+  <div style="border: 2px solid #ddd; padding: 10px; margin-bottom: 20px;">
+    <p style="text-align: center; font-weight: bold;">Menu</p>
+    <img src="./github/images/menu.gif" alt="Menu Screenshot" style="display: block; max-width: 100%;">
+  </div>
+  <div style="border: 2px solid #ddd; padding: 10px;">
+    <p style="text-align: center; font-weight: bold;">Preview</p>
+    <img src="./github/images/preview.png" alt="Preview Screenshot" style="display: block; max-width: 100%;">
+  </div>
+</div>
+
 
 <p align="center"><b>Disclaimer:</b> Use at your own risk.</p>
