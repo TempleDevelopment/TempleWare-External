@@ -40,6 +40,8 @@
 </details>
 
 ## Screenshots
-<img src="./github/images/preview.png">
+Menu|Preview
+:-:|:-:
+<img src="./github/images/menu.gif">|<img src="./github/images/preview.png">
 
 <p align="center"><b>Disclaimer:</b> Use at your own risk.</p>
