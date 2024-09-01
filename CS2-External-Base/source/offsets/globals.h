@@ -5,6 +5,8 @@
 
 #include "../../imgui/imgui.h"
 
+#define VK_LSHIFT 0xA0
+
 namespace offsets {
     // Game offsets
     constexpr std::ptrdiff_t dwLocalPlayerPawn = 0x17D37F0;
@@ -27,6 +29,7 @@ namespace offsets {
     constexpr std::ptrdiff_t m_vOldOrigin = 0x1274;
     constexpr std::ptrdiff_t m_entitySpottedState = 0x2288;
     constexpr std::ptrdiff_t m_vecViewOffset = 0xC50;
+
 }
 
 
@@ -37,7 +40,11 @@ namespace globals {
     inline int TriggerBotDelay = 20;
     extern int TriggerBotMode;
     extern bool TriggerBotToggled;
+    extern int TriggerBotKey;        
+    extern char TriggerBotKeyName[64];
     inline std::uintptr_t client = 0;
     inline ImVec4 MenuAccentColor = ImVec4(0.26f, 0.59f, 0.98f, 1.00f);
     inline bool Rainbow = false;
+    inline bool NoFlashEnabled = false;
+    inline bool AutoScopeEnabled = false;
 }

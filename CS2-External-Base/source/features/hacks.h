@@ -7,4 +7,5 @@ namespace hacks
 	void MiscThread(const Memory& memory) noexcept;
 	void VisualThread(const Memory& memory) noexcept;
 	void AimThread(const Memory& memory) noexcept;
+	void NoFlash(const Memory& memory) noexcept;
 }

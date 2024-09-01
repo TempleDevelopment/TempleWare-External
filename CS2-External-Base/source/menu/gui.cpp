@@ -279,6 +279,18 @@ void gui::SetupImGuiStyle() noexcept {
     style->GrabRounding = 2.0f;
 }
 
+std::string GetKeyName(int vk) {
+    UINT scanCode = MapVirtualKey(vk, MAPVK_VK_TO_VSC);
+    char keyName[128];
+    int result = GetKeyNameTextA(scanCode << 16, keyName, sizeof(keyName));
+    if (result > 0) {
+        return std::string(keyName);
+    }
+    else {
+        return "Unknown";
+    }
+}
+
 void gui::Render() noexcept {
     ImGui::SetNextWindowPos(ImVec2(0, 0), ImGuiCond_Always);
     ImGui::SetNextWindowSize(ImVec2(WIDTH, HEIGHT), ImGuiCond_Always);
@@ -291,22 +303,51 @@ void gui::Render() noexcept {
 
     if (ImGui::BeginTabBar("Cheat Tabs", ImGuiTabBarFlags_Reorderable)) {
         if (ImGui::BeginTabItem("Combat")) {
-            ImGui::Checkbox("TriggerBot", &globals::TriggerBot);
+            ImGui::Text("TriggerBot");
             ImGui::SameLine();
-            ImGui::Text("[L-Shift]");
-
-            const char* items[] = { "Hold", "Toggle" };
-            ImGui::Combo("Mode", &globals::TriggerBotMode, items, IM_ARRAYSIZE(items));
+            ImGui::Checkbox("##TriggerBotEnable", &globals::TriggerBot);
+            ImGui::SameLine();
 
             if (globals::TriggerBot) {
-                ImGui::SliderInt("Delay (MS)", &globals::TriggerBotDelay, 1, 100);
+                ImGui::Text("Key:");
+                ImGui::SameLine();
+                if (ImGui::Button(globals::TriggerBotKeyName)) {
+                    ImGui::OpenPopup("Select Key");
+                }
+
+                if (ImGui::BeginPopup("Select Key")) {
+                    ImGuiIO& io = ImGui::GetIO();
+                    for (int i = 0; i < 256; i++) {
+                        if (ImGui::IsKeyPressed(i)) {
+                            globals::TriggerBotKey = i;
+                            std::string keyName = GetKeyName(i);
+                            snprintf(globals::TriggerBotKeyName, sizeof(globals::TriggerBotKeyName), "%s", keyName.c_str());
+                            ImGui::CloseCurrentPopup();
+                        }
+                    }
+                    ImGui::Text("Press a key to select.");
+                    ImGui::EndPopup();
+                }
+
+                if (ImGui::CollapsingHeader("Settings", ImGuiTreeNodeFlags_DefaultOpen)) {
+                    ImGui::PushItemWidth(150);
+                    const char* modeItems[] = { "Hold", "Toggle" };
+                    ImGui::Combo("Mode", &globals::TriggerBotMode, modeItems, IM_ARRAYSIZE(modeItems));
+                    ImGui::PopItemWidth();
+
+                    ImGui::SliderInt("Delay (ms)", &globals::TriggerBotDelay, 1, 100);
+                }
             }
+
             ImGui::EndTabItem();
         }
+
         if (ImGui::BeginTabItem("Visual")) {
-            ImGui::SliderInt("Fov", &globals::FOV, 0, 160, "FOV: %d");
+            ImGui::SliderInt("FOV", &globals::FOV, 0, 160, "FOV: %d");
+            ImGui::Checkbox("No Flash", &globals::NoFlashEnabled);
             ImGui::EndTabItem();
         }
+
         if (ImGui::BeginTabItem("Misc")) {
             ImGui::Text("Menu Color");
             ImGui::SameLine();
@@ -316,8 +357,10 @@ void gui::Render() noexcept {
             ImGui::Checkbox("Rainbow", &globals::Rainbow);
             ImGui::EndTabItem();
         }
+
         ImGui::EndTabBar();
     }
+
     ImGui::End();
 
     if (globals::Rainbow) {
@@ -329,7 +372,8 @@ void gui::Render() noexcept {
     }
 
     ApplyCustomStyle();
-}       
+}
+
 
 void gui::ApplyCustomStyle() noexcept {
     ImGuiStyle* style = &ImGui::GetStyle();

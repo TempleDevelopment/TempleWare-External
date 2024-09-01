@@ -23,10 +23,23 @@ void hacks::MiscThread(const Memory& memory) noexcept
 	}
 }
 
+void hacks::NoFlash(const Memory& memory) noexcept {
+    if (globals::NoFlashEnabled) {
+        std::uintptr_t localPlayer = memory.Read<std::uintptr_t>(globals::client + offsets::dwLocalPlayerPawn);
+        if (localPlayer) {
+            float flashDuration = memory.Read<float>(localPlayer + offsets::flFlashDuration);
+            if (flashDuration > 0.0f) {
+                memory.Write<float>(localPlayer + offsets::flFlashDuration, 0.0f);
+            }
+        }
+    }
+}
+
 void hacks::VisualThread(const Memory& memory) noexcept
 {
 	while (gui::isRunning)
 	{
+        NoFlash(memory);
 		std::this_thread::sleep_for(std::chrono::milliseconds(1));
 	}
 }
@@ -65,19 +78,23 @@ void hacks::AimThread(const Memory& memory) noexcept
         if (globals::TriggerBot)
         {
             if (globals::TriggerBotMode == 0) {
-                if (GetAsyncKeyState(VK_LSHIFT))
+                if (GetAsyncKeyState(globals::TriggerBotKey) & 0x8000)
                 {
                     triggerbot::TriggerBot();
                 }
             }
             else if (globals::TriggerBotMode == 1) {
-                if (GetAsyncKeyState(VK_LSHIFT) & 0x8000)
-                {
+                static bool keyPreviouslyDown = false;
+                bool keyCurrentlyDown = GetAsyncKeyState(globals::TriggerBotKey) & 0x8000;
+
+                if (keyCurrentlyDown && !keyPreviouslyDown) {
                     globals::TriggerBotToggled = !globals::TriggerBotToggled;
                     std::this_thread::sleep_for(std::chrono::milliseconds(200));
                 }
-                if (globals::TriggerBotToggled)
-                {
+
+                keyPreviouslyDown = keyCurrentlyDown;
+
+                if (globals::TriggerBotToggled) {
                     triggerbot::TriggerBot();
                 }
             }
@@ -86,6 +103,3 @@ void hacks::AimThread(const Memory& memory) noexcept
         std::this_thread::sleep_for(std::chrono::milliseconds(1));
     }
 }
-
-
-
