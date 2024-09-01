@@ -40,8 +40,6 @@
 </details>
 
 ## Screenshots
-Preview
-:-:|:-:
 <img src="./github/images/preview.png">
 
 <p align="center"><b>Disclaimer:</b> Use at your own risk.</p>
