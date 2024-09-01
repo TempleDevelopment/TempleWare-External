@@ -27,6 +27,7 @@
 
 <details>
 <summary>Trigger Bot</summary>
+
 - Shot Delay
 </details>
 
