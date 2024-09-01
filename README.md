@@ -18,7 +18,7 @@
 ### An open-source external cheat base for Counter-Strike 2, written in C++.
 ---
 
-### Features
+## Features
 <details>
 <summary>Visual</summary>
   
