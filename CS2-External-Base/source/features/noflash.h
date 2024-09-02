@@ -3,7 +3,7 @@
 #include "../memory/Memory.h"
 
 namespace features {
-    class TriggerBot {
+    class NoFlash {
     public:
         static void Run(const Memory& memory) noexcept;
     };

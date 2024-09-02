@@ -3,10 +3,10 @@
  *                     (c) 2023-2024 Temple Client Cheats Team. All rights reserved.            *
  ************************************************************************************************/
 
-#include "menu/gui.h"
-#include "memory.h"
-#include "offsets/globals.h"
-#include "features/hacks.h"
+#include "menu/GUI.h"
+#include "memory/Memory.h"
+#include "offsets/Globals.h"
+#include "threads/threads.h"
 
 #include <thread>
 
@@ -20,15 +20,15 @@ int __stdcall wWinMain(
 
     globals::client = memory.GetModuleAddress("client.dll");
 
-    std::thread(hacks::MiscThread, memory).detach();
-    std::thread(hacks::VisualThread, memory).detach();
-    std::thread(hacks::AimThread, memory).detach();
+    std::thread(threads::RunMiscThread, std::ref(memory)).detach();
+    std::thread(threads::RunVisualThread, std::ref(memory)).detach();
+    std::thread(threads::RunAimThread, std::ref(memory)).detach();
 
     gui::CreateHWindow("templecheats.xyz");
     gui::CreateDevice();
     gui::CreateImGui();
 
-    while (gui::isRunning) {
+    while (globals::isRunning) {
         gui::BeginRender();
         gui::Render();
         gui::EndRender();

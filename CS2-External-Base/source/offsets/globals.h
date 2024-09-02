@@ -7,44 +7,27 @@
 
 #define VK_LSHIFT 0xA0
 
-namespace offsets {
-    // Game offsets
-    constexpr std::ptrdiff_t dwLocalPlayerPawn = 0x17D37F0;
-    constexpr std::ptrdiff_t dwEntityList = 0x19684F8;
-    constexpr std::ptrdiff_t dwViewMatrix = 0x19CA480;
-    constexpr std::ptrdiff_t dwViewAngles = 0x19D98E8;
-
-    // Player details
-    constexpr std::ptrdiff_t m_pCameraServices = 0x1130;
-    constexpr std::ptrdiff_t m_iFOV = 0x210;
-    constexpr std::ptrdiff_t m_bIsScoped = 0x22A0;
-    constexpr std::ptrdiff_t attack = 0x17CC020;
-    constexpr std::ptrdiff_t m_iIDEntIndex = 0x13A8;
-    constexpr std::ptrdiff_t flFlashDuration = 0x135C;
-
-    // Entity details
-    constexpr std::ptrdiff_t m_hPawn = 0x60C;
-    constexpr std::ptrdiff_t m_iHealth = 0x324;
-    constexpr std::ptrdiff_t m_iTeamNum = 0x3C3;
-    constexpr std::ptrdiff_t m_vOldOrigin = 0x1274;
-    constexpr std::ptrdiff_t m_entitySpottedState = 0x2288;
-    constexpr std::ptrdiff_t m_vecViewOffset = 0xC50;
-
-}
-
-
 namespace globals {
-    // Global settings
-    inline int FOV = 90;
-    inline bool TriggerBot = false;
-    inline int TriggerBotDelay = 20;
-    extern int TriggerBotMode;
-    extern bool TriggerBotToggled;
-    extern int TriggerBotKey;        
-    extern char TriggerBotKeyName[64];
-    inline std::uintptr_t client = 0;
-    inline ImVec4 MenuAccentColor = ImVec4(0.26f, 0.59f, 0.98f, 1.00f);
-    inline bool Rainbow = false;
-    inline bool NoFlashEnabled = false;
-    inline bool AutoScopeEnabled = false;
+    
+    // TriggerBot
+    inline bool TriggerBot = false;                    // TriggerBot activation state
+    inline int TriggerBotKey = VK_LSHIFT;              // Key to activate TriggerBot
+    inline char TriggerBotKeyName[64] = "L-Shift";     // Name of the key for display
+    inline int TriggerBotMode = 0;                     // TriggerBot mode (Hold/Toggle)
+    inline int TriggerBotDelay = 20;                   // TriggerBot delay in milliseconds
+    inline bool TriggerBotToggled = false;             // Toggle state for TriggerBot
+
+    // Fov
+    inline int FOV = 90;                               // Field of View setting
+    
+    // NoFlash
+    inline bool NoFlashEnabled = false;                // No Flash activation state
+
+    // Menu
+    inline ImVec4 MenuAccentColor = ImVec4(0.26f, 0.59f, 0.98f, 1.00f);  // GUI color setting
+    inline bool Rainbow = false;                       // Rainbow color mode activation
+
+    // Application state
+    inline bool isRunning = true;                      // Whether the hack is running
+    inline std::uintptr_t client = 0;                  // Client base address
 }

@@ -42,10 +42,19 @@
     <ClCompile Include="imgui\imgui_widgets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\features\hacks.cpp">
+    <ClCompile Include="source\threads\threads.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\offsets\globals.cpp">
+    <ClCompile Include="source\features\fov.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\features\noflash.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\features\triggerbot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\offsets\offsets.h">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -83,7 +92,13 @@
     <ClInclude Include="source\memory\memory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="source\features\hacks.h">
+    <ClInclude Include="source\threads\threads.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\features\fov.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\features\noflash.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="source\features\triggerbot.h">

@@ -294,7 +294,7 @@ std::string GetKeyName(int vk) {
 void gui::Render() noexcept {
     ImGui::SetNextWindowPos(ImVec2(0, 0), ImGuiCond_Always);
     ImGui::SetNextWindowSize(ImVec2(WIDTH, HEIGHT), ImGuiCond_Always);
-    ImGui::Begin("CS2 External | templecheats.xyz", &isRunning,
+    ImGui::Begin("CS2 External | templecheats.xyz", &globals::isRunning,
         ImGuiWindowFlags_NoResize |
         ImGuiWindowFlags_NoSavedSettings |
         ImGuiWindowFlags_NoCollapse |
@@ -302,11 +302,12 @@ void gui::Render() noexcept {
         ImGuiWindowFlags_NoScrollbar);
 
     if (ImGui::BeginTabBar("Cheat Tabs", ImGuiTabBarFlags_Reorderable)) {
+
+        // Combat Tab
         if (ImGui::BeginTabItem("Combat")) {
             ImGui::Text("TriggerBot");
             ImGui::SameLine();
             ImGui::Checkbox("##TriggerBotEnable", &globals::TriggerBot);
-            ImGui::SameLine();
 
             if (globals::TriggerBot) {
                 ImGui::Text("Key:");
@@ -342,12 +343,14 @@ void gui::Render() noexcept {
             ImGui::EndTabItem();
         }
 
+        // Visual Tab
         if (ImGui::BeginTabItem("Visual")) {
             ImGui::SliderInt("FOV", &globals::FOV, 0, 160, "FOV: %d");
             ImGui::Checkbox("No Flash", &globals::NoFlashEnabled);
             ImGui::EndTabItem();
         }
 
+        // Misc Tab
         if (ImGui::BeginTabItem("Misc")) {
             ImGui::Text("Menu Color");
             ImGui::SameLine();
@@ -373,6 +376,7 @@ void gui::Render() noexcept {
 
     ApplyCustomStyle();
 }
+
 
 
 void gui::ApplyCustomStyle() noexcept {

@@ -131,8 +131,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\features\fov.cpp" />
+    <ClCompile Include="source\features\noflash.cpp" />
+    <ClCompile Include="source\features\triggerbot.cpp" />
     <ClCompile Include="source\menu\gui.cpp" />
-    <ClCompile Include="source\features\hacks.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="imgui\imgui.cpp" />
     <ClCompile Include="imgui\imgui_demo.cpp" />
@@ -141,13 +143,15 @@
     <ClCompile Include="imgui\imgui_impl_win32.cpp" />
     <ClCompile Include="imgui\imgui_tables.cpp" />
     <ClCompile Include="imgui\imgui_widgets.cpp" />
-    <ClCompile Include="source\offsets\globals.cpp" />
+    <ClCompile Include="source\offsets\offsets.h" />
+    <ClCompile Include="source\threads\threads.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\features\fov.h" />
+    <ClInclude Include="source\features\noflash.h" />
     <ClInclude Include="source\features\triggerbot.h" />
     <ClInclude Include="source\offsets\globals.h" />
     <ClInclude Include="source\menu\gui.h" />
-    <ClInclude Include="source\features\hacks.h" />
     <ClInclude Include="source\memory\memory.h" />
     <ClInclude Include="imgui\imconfig.h" />
     <ClInclude Include="imgui\imgui.h" />
@@ -157,6 +161,7 @@
     <ClInclude Include="imgui\imstb_rectpack.h" />
     <ClInclude Include="imgui\imstb_textedit.h" />
     <ClInclude Include="imgui\imstb_truetype.h" />
+    <ClInclude Include="source\threads\threads.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
