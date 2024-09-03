@@ -16,6 +16,9 @@ namespace globals {
     inline int TriggerBotMode = 0;                     // TriggerBot mode (Hold/Toggle)
     inline int TriggerBotDelay = 20;                   // TriggerBot delay in milliseconds
     inline bool TriggerBotToggled = false;             // Toggle state for TriggerBot
+    inline bool TriggerBotTeamCheck = true;            // Whether to shoot teammates or not
+    inline bool TriggerBotIgnoreFlash = false;         // Whether TriggerBot works while flashed
+
 
     // Fov
     inline int FOV = 90;                               // Field of View setting

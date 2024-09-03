@@ -337,6 +337,8 @@ void gui::Render() noexcept {
                     ImGui::PopItemWidth();
 
                     ImGui::SliderInt("Delay (ms)", &globals::TriggerBotDelay, 1, 100);
+                    ImGui::Checkbox("TeamCheck", &globals::TriggerBotTeamCheck);
+                    ImGui::Checkbox("IgnoreFlash", &globals::TriggerBotIgnoreFlash);
                 }
             }
 
@@ -346,7 +348,7 @@ void gui::Render() noexcept {
         // Visual Tab
         if (ImGui::BeginTabItem("Visual")) {
             ImGui::SliderInt("FOV", &globals::FOV, 0, 160, "FOV: %d");
-            ImGui::Checkbox("No Flash", &globals::NoFlashEnabled);
+            ImGui::Checkbox("NoFlash", &globals::NoFlashEnabled);
             ImGui::EndTabItem();
         }
 
