@@ -30,6 +30,8 @@
 <summary>Trigger Bot</summary>
 
 - Shot Delay
+- Team Check
+- Ignore Flash
 </details>
 
 <details>
