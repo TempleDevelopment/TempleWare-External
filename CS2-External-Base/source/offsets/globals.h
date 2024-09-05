@@ -19,7 +19,6 @@ namespace globals {
     inline bool TriggerBotTeamCheck = true;            // Whether to shoot teammates or not
     inline bool TriggerBotIgnoreFlash = false;         // Whether TriggerBot works while flashed
 
-
     // Fov
     inline int FOV = 90;                               // Field of View setting
     

@@ -12,7 +12,7 @@
 namespace threads {
     void RunMiscThread(const Memory& memory) noexcept {
         while (gui::isRunning) {
-            features::FOVManager::AdjustFOV(memory);
+            features::FOVManager::AdjustFOV(memory);         
             std::this_thread::sleep_for(std::chrono::milliseconds(1));
         }
     }

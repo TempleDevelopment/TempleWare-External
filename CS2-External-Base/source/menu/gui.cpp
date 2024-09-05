@@ -303,6 +303,7 @@ void gui::Render() noexcept {
 
     if (ImGui::BeginTabBar("Cheat Tabs", ImGuiTabBarFlags_Reorderable)) {
 
+
         // Combat Tab
         if (ImGui::BeginTabItem("Combat")) {
             ImGui::Text("TriggerBot");
@@ -330,25 +331,28 @@ void gui::Render() noexcept {
                     ImGui::EndPopup();
                 }
 
-                if (ImGui::CollapsingHeader("Settings", ImGuiTreeNodeFlags_DefaultOpen)) {
+                if (ImGui::CollapsingHeader("TriggerBot Settings", ImGuiTreeNodeFlags_DefaultOpen)) {
                     ImGui::PushItemWidth(150);
                     const char* modeItems[] = { "Hold", "Toggle" };
                     ImGui::Combo("Mode", &globals::TriggerBotMode, modeItems, IM_ARRAYSIZE(modeItems));
                     ImGui::PopItemWidth();
 
-                    ImGui::SliderInt("Delay (ms)", &globals::TriggerBotDelay, 1, 100);
+                    ImGui::SliderInt("Delay (ms)", &globals::TriggerBotDelay, 1, 1000);
                     ImGui::Checkbox("TeamCheck", &globals::TriggerBotTeamCheck);
                     ImGui::Checkbox("IgnoreFlash", &globals::TriggerBotIgnoreFlash);
                 }
             }
 
+            ImGui::Separator();
             ImGui::EndTabItem();
         }
 
         // Visual Tab
         if (ImGui::BeginTabItem("Visual")) {
             ImGui::SliderInt("FOV", &globals::FOV, 0, 160, "FOV: %d");
+            ImGui::Separator();
             ImGui::Checkbox("NoFlash", &globals::NoFlashEnabled);
+            ImGui::Separator();
             ImGui::EndTabItem();
         }
 
@@ -360,6 +364,7 @@ void gui::Render() noexcept {
                 globals::Rainbow = false;
             }
             ImGui::Checkbox("Rainbow", &globals::Rainbow);
+            ImGui::Separator();
             ImGui::EndTabItem();
         }
 
