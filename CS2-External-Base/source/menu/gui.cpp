@@ -292,20 +292,46 @@ std::string GetKeyName(int vk) {
 }
 
 void gui::Render() noexcept {
+    static int currentTab = 0;
+
     ImGui::SetNextWindowPos(ImVec2(0, 0), ImGuiCond_Always);
-    ImGui::SetNextWindowSize(ImVec2(WIDTH, HEIGHT), ImGuiCond_Always);
-    ImGui::Begin("CS2 External | templecheats.xyz", &globals::isRunning,
+    ImGui::SetNextWindowSize(ImVec2(540, 295), ImGuiCond_Always);
+    ImGui::Begin(
+        "CS2 External | templecheats.xyz",
+        &globals::isRunning,
         ImGuiWindowFlags_NoResize |
         ImGuiWindowFlags_NoSavedSettings |
         ImGuiWindowFlags_NoCollapse |
         ImGuiWindowFlags_NoMove |
-        ImGuiWindowFlags_NoScrollbar);
+        ImGuiWindowFlags_NoScrollbar
+    );
 
-    if (ImGui::BeginTabBar("Cheat Tabs", ImGuiTabBarFlags_Reorderable)) {
+    ImGui::PushStyleColor(ImGuiCol_Border, ImColor(0, 0, 0, 255).Value);
+    ImGui::BeginChild("##LeftSide", ImVec2(120, ImGui::GetContentRegionAvail().y), true);
+    {
+        ImGui::Text("CS2 External");
+        ImGui::Separator();
+        ImGui::Dummy(ImVec2(0.0f, 5.0f));
 
+        if (ImGui::Button("Combat", ImVec2(ImGui::GetContentRegionAvail().x, 30))) currentTab = 0;
+        ImGui::Dummy(ImVec2(0.0f, 5.0f));
+        if (ImGui::Button("Visual", ImVec2(ImGui::GetContentRegionAvail().x, 30))) currentTab = 1;
+        ImGui::Dummy(ImVec2(0.0f, 5.0f));
+        if (ImGui::Button("Misc", ImVec2(ImGui::GetContentRegionAvail().x, 30))) currentTab = 2;
+        ImGui::Dummy(ImVec2(0.0f, ImGui::GetContentRegionAvail().y - 40));
+        if (ImGui::Button("Exit", ImVec2(ImGui::GetContentRegionAvail().x, 30))) {
+            exit(0);
+        }
+    }
+    ImGui::EndChild();
 
-        // Combat Tab
-        if (ImGui::BeginTabItem("Combat")) {
+    ImGui::SameLine();
+    ImGui::BeginChild("##RightSide", ImVec2(ImGui::GetContentRegionAvail().x, ImGui::GetContentRegionAvail().y), true);
+    {
+        if (currentTab == 0) {
+            // Combat Tab:
+            ImGui::Text("Combat Settings");
+            ImGui::Separator();
             ImGui::Text("TriggerBot");
             ImGui::SameLine();
             ImGui::Checkbox("##TriggerBotEnable", &globals::TriggerBot);
@@ -331,7 +357,13 @@ void gui::Render() noexcept {
                     ImGui::EndPopup();
                 }
 
-                if (ImGui::CollapsingHeader("TriggerBot Settings", ImGuiTreeNodeFlags_DefaultOpen)) {
+                ImGui::Checkbox("IgnoreFlash", &globals::TriggerBotIgnoreFlash);
+
+                if (!ImGui::CollapsingHeader("TriggerBot", ImGuiTreeNodeFlags_DefaultOpen)) {
+                    ImGui::Separator();
+                }
+
+                if (ImGui::CollapsingHeader("TriggerBot", ImGuiTreeNodeFlags_DefaultOpen)) {
                     ImGui::PushItemWidth(150);
                     const char* modeItems[] = { "Hold", "Toggle" };
                     ImGui::Combo("Mode", &globals::TriggerBotMode, modeItems, IM_ARRAYSIZE(modeItems));
@@ -339,25 +371,25 @@ void gui::Render() noexcept {
 
                     ImGui::SliderInt("Delay (ms)", &globals::TriggerBotDelay, 1, 1000);
                     ImGui::Checkbox("TeamCheck", &globals::TriggerBotTeamCheck);
-                    ImGui::Checkbox("IgnoreFlash", &globals::TriggerBotIgnoreFlash);
+                    ImGui::Separator();
                 }
             }
-
-            ImGui::Separator();
-            ImGui::EndTabItem();
         }
 
-        // Visual Tab
-        if (ImGui::BeginTabItem("Visual")) {
+        else if (currentTab == 1) {
+            // Visual Tab:
+            ImGui::Text("Visual");
+            ImGui::Separator();
             ImGui::SliderInt("FOV", &globals::FOV, 0, 160, "FOV: %d");
             ImGui::Separator();
             ImGui::Checkbox("NoFlash", &globals::NoFlashEnabled);
             ImGui::Separator();
-            ImGui::EndTabItem();
         }
 
-        // Misc Tab
-        if (ImGui::BeginTabItem("Misc")) {
+        else if (currentTab == 2) {
+            // Misc Tab:
+            ImGui::Text("Misc");
+            ImGui::Separator();
             ImGui::Text("Menu Color");
             ImGui::SameLine();
             if (ImGui::ColorEdit4("##AccentColor", (float*)&globals::MenuAccentColor, ImGuiColorEditFlags_DisplayRGB | ImGuiColorEditFlags_NoOptions)) {
@@ -365,26 +397,22 @@ void gui::Render() noexcept {
             }
             ImGui::Checkbox("Rainbow", &globals::Rainbow);
             ImGui::Separator();
-            ImGui::EndTabItem();
+
+            if (globals::Rainbow) {
+                static float hue = 0.0f;
+                hue += ImGui::GetIO().DeltaTime * 0.1f;
+                if (hue > 1.0f) hue = 0.0f;
+                ImVec4 rainbowColor = ImColor::HSV(hue, 1.0f, 1.0f);
+                globals::MenuAccentColor = rainbowColor;
+            }
+
+            ApplyCustomStyle();
         }
-
-        ImGui::EndTabBar();
     }
-
+    ImGui::EndChild();
+    ImGui::PopStyleColor();
     ImGui::End();
-
-    if (globals::Rainbow) {
-        static float hue = 0.0f;
-        hue += ImGui::GetIO().DeltaTime * 0.1f;
-        if (hue > 1.0f) hue = 0.0f;
-        ImVec4 rainbowColor = ImColor::HSV(hue, 1.0f, 1.0f);
-        globals::MenuAccentColor = rainbowColor;
-    }
-
-    ApplyCustomStyle();
 }
-
-
 
 void gui::ApplyCustomStyle() noexcept {
     ImGuiStyle* style = &ImGui::GetStyle();
