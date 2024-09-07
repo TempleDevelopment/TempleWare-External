@@ -368,9 +368,9 @@ void gui::Render() noexcept {
                     ImGui::SliderInt("Delay (ms)", &globals::TriggerBotDelay, 1, 1000);
                     ImGui::Checkbox("TeamCheck", &globals::TriggerBotTeamCheck);
                     ImGui::Checkbox("IgnoreFlash", &globals::TriggerBotIgnoreFlash);
-                    ImGui::Separator();
                 }
             }
+            ImGui::Separator();
         }
 
         else if (currentTab == 1) {
