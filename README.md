@@ -36,7 +36,8 @@
 
 <details>
 <summary>Misc</summary>
-  
+
+- Bunny Hop
 - Menu Accent Color Selector
 - Rainbow Menu
 </details>
