@@ -28,6 +28,7 @@ namespace globals {
     // Menu
     inline ImVec4 MenuAccentColor = ImVec4(0.26f, 0.59f, 0.98f, 1.00f);  // GUI color setting
     inline bool Rainbow = false;                       // Rainbow color mode activation
+    inline bool MenuVisible = true;                    // Menu visibility state
 
     // Application state
     inline bool isRunning = true;                      // Whether the hack is running

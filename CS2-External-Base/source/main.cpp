@@ -28,12 +28,23 @@ int __stdcall wWinMain(
     gui::CreateDevice();
     gui::CreateImGui();
 
-    while (globals::isRunning) {
-        gui::BeginRender();
-        gui::Render();
-        gui::EndRender();
+    bool windowVisible = true;
 
-        std::this_thread::sleep_for(std::chrono::milliseconds(5));
+    while (globals::isRunning) {
+        if (GetAsyncKeyState(VK_END) & 0x8000) {
+            windowVisible = !windowVisible;
+            ShowWindow(gui::window, windowVisible ? SW_SHOW : SW_HIDE);
+            std::this_thread::sleep_for(std::chrono::milliseconds(200));
+        }
+
+        if (windowVisible) {
+            gui::BeginRender();
+            gui::Render();
+            gui::EndRender();
+        }
+        else {
+            std::this_thread::sleep_for(std::chrono::milliseconds(50));
+        }
     }
 
     gui::DestroyImGui();
