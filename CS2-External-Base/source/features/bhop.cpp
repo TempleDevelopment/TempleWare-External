@@ -4,9 +4,9 @@
 
 namespace features
 {
-	void Bhop::BunnyHop(const Memory& memory) noexcept
+	void Bhop::Run(const Memory& memory) noexcept
 	{
-		if (!globals::Bhop)
+		if (!globals::BunnyHopEnabled)
 			return;
 
 		std::uintptr_t localPlayer = memory.Read<std::uintptr_t>(globals::client + offsets::dwLocalPlayerPawn);

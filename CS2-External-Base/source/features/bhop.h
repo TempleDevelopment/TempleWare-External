@@ -9,6 +9,6 @@ namespace features
 	class Bhop 
 	{
 	public:
-		static void BunnyHop(const Memory& memory) noexcept;
+		static void Run(const Memory& memory) noexcept;
 	};
 }

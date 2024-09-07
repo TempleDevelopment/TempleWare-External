@@ -394,7 +394,8 @@ void gui::Render() noexcept {
             }
             ImGui::Checkbox("Rainbow", &globals::Rainbow);
             ImGui::Separator();
-            ImGui::Checkbox("Bunny Hop", &globals::Bhop);
+            ImGui::Checkbox("BunnyHop", &globals::BunnyHopEnabled);
+            ImGui::Separator();
 
 
             if (globals::Rainbow) {
