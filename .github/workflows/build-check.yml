@@ -25,4 +25,4 @@ jobs:
       with:
         name: Compiled-Binaries
         path: |
-          D:\a\DragonBurn\DragonBurn\x64\Release\CS2-External-Base.exe
+          D:\a\CS2-External-Base\x64\Release\CS2-External-Base.exe
