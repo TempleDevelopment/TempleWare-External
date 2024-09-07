@@ -26,4 +26,5 @@ namespace offsets {
     constexpr std::ptrdiff_t m_entitySpottedState = 0x2288;
     constexpr std::ptrdiff_t m_vecViewOffset = 0xC50;
     constexpr std::ptrdiff_t m_iObserverMode = 0x40;
+    constexpr std::ptrdiff_t m_fFlags = 0x63;
 }

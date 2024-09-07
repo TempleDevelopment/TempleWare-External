@@ -32,4 +32,7 @@ namespace globals {
     // Application state
     inline bool isRunning = true;                      // Whether the hack is running
     inline std::uintptr_t client = 0;                  // Client base address
+
+    //Misc
+    inline bool Bhop = false;                          // Bhop activation state
 }

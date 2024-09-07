@@ -394,6 +394,8 @@ void gui::Render() noexcept {
             }
             ImGui::Checkbox("Rainbow", &globals::Rainbow);
             ImGui::Separator();
+            ImGui::Checkbox("Bunny Hop", &globals::Bhop);
+
 
             if (globals::Rainbow) {
                 static float hue = 0.0f;

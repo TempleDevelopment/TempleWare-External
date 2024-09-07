@@ -132,6 +132,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="source\features\fov.cpp" />
+    <ClCompile Include="source\features\bhop.cpp" />
     <ClCompile Include="source\features\noflash.cpp" />
     <ClCompile Include="source\features\triggerbot.cpp" />
     <ClCompile Include="source\menu\gui.cpp" />
@@ -148,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\features\fov.h" />
+    <ClInclude Include="source\features\bhop.h" />
     <ClInclude Include="source\features\noflash.h" />
     <ClInclude Include="source\features\triggerbot.h" />
     <ClInclude Include="source\offsets\globals.h" />
