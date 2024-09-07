@@ -176,15 +176,17 @@ void gui::CreateImGui() noexcept
     io.IniFilename = NULL;
     ImGui::StyleColorsDark();
 
-    io.Fonts->AddFontDefault();
+    const char* fontPath = "C:\\Windows\\Fonts\\segoeui.ttf";
+    float fontSize = 18.0f;
 
-    unsigned char* tex_pixels = NULL;
-    int tex_width, tex_height;
-    io.Fonts->GetTexDataAsRGBA32(&tex_pixels, &tex_width, &tex_height);
+    if (!io.Fonts->AddFontFromFileTTF(fontPath, fontSize)) {
+        io.Fonts->AddFontDefault();
+    }
 
     ImGui_ImplWin32_Init(window);
     ImGui_ImplDX9_Init(device);
 }
+
 
 
 void gui::DestroyImGui() noexcept
@@ -330,7 +332,7 @@ void gui::Render() noexcept {
     {
         if (currentTab == 0) {
             // Combat Tab:
-            ImGui::Text("Combat Settings");
+            ImGui::Text("Combat");
             ImGui::Separator();
             ImGui::Text("TriggerBot");
             ImGui::SameLine();
@@ -357,13 +359,7 @@ void gui::Render() noexcept {
                     ImGui::EndPopup();
                 }
 
-                ImGui::Checkbox("IgnoreFlash", &globals::TriggerBotIgnoreFlash);
-
-                if (!ImGui::CollapsingHeader("TriggerBot", ImGuiTreeNodeFlags_DefaultOpen)) {
-                    ImGui::Separator();
-                }
-
-                if (ImGui::CollapsingHeader("TriggerBot", ImGuiTreeNodeFlags_DefaultOpen)) {
+                if (ImGui::CollapsingHeader("Settings", ImGuiTreeNodeFlags_DefaultOpen)) {
                     ImGui::PushItemWidth(150);
                     const char* modeItems[] = { "Hold", "Toggle" };
                     ImGui::Combo("Mode", &globals::TriggerBotMode, modeItems, IM_ARRAYSIZE(modeItems));
@@ -371,6 +367,7 @@ void gui::Render() noexcept {
 
                     ImGui::SliderInt("Delay (ms)", &globals::TriggerBotDelay, 1, 1000);
                     ImGui::Checkbox("TeamCheck", &globals::TriggerBotTeamCheck);
+                    ImGui::Checkbox("IgnoreFlash", &globals::TriggerBotIgnoreFlash);
                     ImGui::Separator();
                 }
             }
