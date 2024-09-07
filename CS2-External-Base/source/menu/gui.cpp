@@ -103,9 +103,12 @@ void gui::CreateHWindow(const char* windowName) noexcept
         0
     );
 
+    SetWindowPos(window, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_SHOWWINDOW);
+
     ShowWindow(window, SW_SHOWDEFAULT);
     UpdateWindow(window);
 }
+
 
 void gui::DestroyHWindow() noexcept
 {
