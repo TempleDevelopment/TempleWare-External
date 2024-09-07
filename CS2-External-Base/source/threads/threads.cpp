@@ -3,6 +3,7 @@
 #include "../features/noflash.h"
 #include "../features/triggerbot.h"
 #include "../menu/gui.h"
+#include "../features/bhop.h"
 
 #include "../offsets/offsets.h"
 #include "../offsets/globals.h"
@@ -12,7 +13,8 @@
 namespace threads {
     void RunMiscThread(const Memory& memory) noexcept {
         while (gui::isRunning) {
-            features::FOVManager::AdjustFOV(memory);         
+            features::FOVManager::AdjustFOV(memory);
+            features::Bhop::BunnyHop(memory);
             std::this_thread::sleep_for(std::chrono::milliseconds(1));
         }
     }
