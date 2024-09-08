@@ -15,7 +15,7 @@
 </p>
 
 ---
-### An open-source external cheat base for Counter-Strike 2, written in C++.
+### TempleWare-External is a open-source CS2 External Cheat written in C++.
 ---
 
 ## Features
