@@ -18,7 +18,7 @@
 ### TempleWare-External is a open-source CS2 External Cheat written in C++.
 ---
 
-### How to Build and Launch TempleWare
+### How to Build and Launch TempleWare-External
 
 1. **Build the Executable:**
    - Open the project in Visual Studio.
