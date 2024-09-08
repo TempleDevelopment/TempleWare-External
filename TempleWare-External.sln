@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CS2-External-Base", "CS2-External-Base\CS2-External-Base.vcxproj", "{19813B60-BD94-432A-A3B7-2A807D1A6DAF}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TempleWare-External", "TempleWare-External\TempleWare-External.vcxproj", "{19813B60-BD94-432A-A3B7-2A807D1A6DAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

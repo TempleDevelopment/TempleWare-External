@@ -22,7 +22,7 @@
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{19813b60-bd94-432a-a3b7-2a807d1a6daf}</ProjectGuid>
-    <RootNamespace>CS2ExternalBase</RootNamespace>
+    <RootNamespace>TempleWare-External</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

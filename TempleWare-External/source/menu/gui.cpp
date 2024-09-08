@@ -302,7 +302,7 @@ void gui::Render() noexcept {
     ImGui::SetNextWindowPos(ImVec2(0, 0), ImGuiCond_Always);
     ImGui::SetNextWindowSize(ImVec2(540, 295), ImGuiCond_Always);
     ImGui::Begin(
-        "CS2 External | templecheats.xyz",
+        "TempleWare External | templecheats.xyz",
         &globals::isRunning,
         ImGuiWindowFlags_NoResize |
         ImGuiWindowFlags_NoSavedSettings |
@@ -314,7 +314,7 @@ void gui::Render() noexcept {
     ImGui::PushStyleColor(ImGuiCol_Border, ImColor(0, 0, 0, 255).Value);
     ImGui::BeginChild("##LeftSide", ImVec2(120, ImGui::GetContentRegionAvail().y), true);
     {
-        ImGui::Text("CS2 External");
+        ImGui::Text("TempleWare External");
         ImGui::Separator();
         ImGui::Dummy(ImVec2(0.0f, 5.0f));
 
