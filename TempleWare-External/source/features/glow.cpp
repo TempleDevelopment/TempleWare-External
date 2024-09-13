@@ -5,7 +5,6 @@
 
 namespace features {
     void Glow::Run(const Memory& memory) noexcept {
-        
         if (!globals::Glow)
             return;
 
@@ -41,7 +40,10 @@ namespace features {
             if (!playerCsPawn)
                 continue;
 
-            memory.Write<DWORD64>(playerCsPawn + offsets::m_Glow + offsets::m_glowColorOverride, 0x800000FF);
+            ImVec4 color = globals::GlowColor;
+            DWORD colorArgb = ((DWORD)(color.w * 255) << 24) | ((DWORD)(color.z * 255) << 16) | ((DWORD)(color.y * 255) << 8) | (DWORD)(color.x * 255);
+
+            memory.Write<DWORD64>(playerCsPawn + offsets::m_Glow + offsets::m_glowColorOverride, colorArgb);
             memory.Write<DWORD64>(playerCsPawn + offsets::m_Glow + offsets::m_bGlowing, 1);
         }
     }

@@ -23,7 +23,8 @@ namespace globals {
     inline int FOV = 90;                               // Field of View setting
 
     // Glow
-    inline bool Glow = false;  // Add this line for the Glow feature
+    inline bool Glow = false;                          // Glow activation state
+    inline ImVec4 GlowColor = ImVec4(0.0f, 0.0f, 1.0f, 1.0f); // Glow color setting
     
     // NoFlash
     inline bool NoFlashEnabled = false;                // No Flash activation state
