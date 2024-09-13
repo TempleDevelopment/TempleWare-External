@@ -4,6 +4,7 @@
 #include "../features/triggerbot.h"
 #include "../menu/gui.h"
 #include "../features/bhop.h"
+#include "../features/glow.h"
 
 #include "../offsets/offsets.h"
 #include "../offsets/globals.h"
@@ -22,6 +23,7 @@ namespace threads {
     void RunVisualThread(const Memory& memory) noexcept {
         while (gui::isRunning) {
             features::NoFlash::Run(memory);
+            features::Glow::Run(memory);
             std::this_thread::sleep_for(std::chrono::milliseconds(1));
         }
     }

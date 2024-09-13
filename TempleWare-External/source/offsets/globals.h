@@ -21,6 +21,9 @@ namespace globals {
 
     // Fov
     inline int FOV = 90;                               // Field of View setting
+
+    // Glow
+    inline bool Glow = false;  // Add this line for the Glow feature
     
     // NoFlash
     inline bool NoFlashEnabled = false;                // No Flash activation state

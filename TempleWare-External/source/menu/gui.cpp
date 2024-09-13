@@ -382,6 +382,8 @@ void gui::Render() noexcept {
             ImGui::Separator();
             ImGui::SliderInt("FOV", &globals::FOV, 0, 160, "FOV: %d");
             ImGui::Separator();
+            ImGui::Checkbox("Glow", &globals::Glow);
+            ImGui::Separator();
             ImGui::Checkbox("NoFlash", &globals::NoFlashEnabled);
             ImGui::Separator();
         }
