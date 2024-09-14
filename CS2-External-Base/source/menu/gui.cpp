@@ -399,6 +399,8 @@ void gui::Render() noexcept {
             ImGui::Separator();
             ImGui::Checkbox("BunnyHop", &globals::BunnyHopEnabled);
             ImGui::Separator();
+            ImGui::Checkbox("Bomb Timer", &globals::BombTimerEnabled);
+            ImGui::Separator();
 
 
             if (globals::Rainbow) {

@@ -9,6 +9,8 @@ namespace offsets {
     constexpr std::ptrdiff_t dwViewMatrix = 0x19B89F0;
     constexpr std::ptrdiff_t dwViewAngles = 0x19C7E58;
     constexpr std::ptrdiff_t m_vecOrigin = 0x548;
+    constexpr std::ptrdiff_t dwPlantedC4 = 0x19BD438;
+    constexpr std::ptrdiff_t  m_nBombSite = 0xED4;
 
     // Player details
     constexpr std::ptrdiff_t m_pCameraServices = 0x1130;

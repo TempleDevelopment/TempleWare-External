@@ -36,4 +36,5 @@ namespace globals {
 
     // Misc
     inline bool BunnyHopEnabled = false;               // Bhop activation state
+    inline bool BombTimerEnabled = false;              // BombTimer activation state
 }

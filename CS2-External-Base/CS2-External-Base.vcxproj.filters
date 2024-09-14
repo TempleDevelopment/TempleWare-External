@@ -60,6 +60,9 @@
     <ClCompile Include="source\features\bhop.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\features\bombtimer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\menu\gui.h">
@@ -108,6 +111,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="source\features\bhop.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\features\bombtimer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

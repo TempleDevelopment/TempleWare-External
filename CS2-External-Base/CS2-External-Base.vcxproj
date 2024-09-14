@@ -131,6 +131,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\features\bombtimer.cpp" />
     <ClCompile Include="source\features\fov.cpp" />
     <ClCompile Include="source\features\bhop.cpp" />
     <ClCompile Include="source\features\noflash.cpp" />
@@ -148,6 +149,7 @@
     <ClCompile Include="source\threads\threads.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\features\bombtimer.h" />
     <ClInclude Include="source\features\fov.h" />
     <ClInclude Include="source\features\bhop.h" />
     <ClInclude Include="source\features\noflash.h" />
