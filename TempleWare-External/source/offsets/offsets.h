@@ -17,7 +17,7 @@ namespace offsets {
     constexpr std::ptrdiff_t m_iFOV = 0x210;
     constexpr std::ptrdiff_t m_bGlowing = 0x51;
     constexpr std::ptrdiff_t m_bIsScoped = 0x22A0;
-    constexpr std::ptrdiff_t attack = 0x17BA0B0;
+    constexpr std::ptrdiff_t attack = 0x17BA020;
     constexpr std::ptrdiff_t m_iIDEntIndex = 0x13A8;
     constexpr std::ptrdiff_t flFlashDuration = 0x135C;
 
@@ -30,6 +30,5 @@ namespace offsets {
     constexpr std::ptrdiff_t m_vOldOrigin = 0x1274;
     constexpr std::ptrdiff_t m_entitySpottedState = 0x2288;
     constexpr std::ptrdiff_t m_vecViewOffset = 0xC50;
-    constexpr std::ptrdiff_t m_iObserverMode = 0x40;
     constexpr std::ptrdiff_t m_fFlags = 0x63;
 }
