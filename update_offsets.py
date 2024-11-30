@@ -12,49 +12,46 @@ commits_url = "https://api.github.com/repos/a2x/cs2-dumper/commits"
 
 script_dir = Path(__file__).parent
 dest_path = script_dir / "offsets" / "offsets.json"
+header_path = script_dir / "TempleWare-External" / "source" / "offsets.h"
 
-# Create offsets directory if it doesn't exist
+# Create directories if they don't exist
 os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+os.makedirs(os.path.dirname(header_path), exist_ok=True)
 
-# Fetch the source JSON
-source_response = requests.get(source_url)
-source_data = source_response.json()
+# Load existing offsets
+with open(dest_path, 'r') as dest_file:
+    dest_data = json.load(dest_file)
 
-# Fetch build Number
-response = requests.get(commits_url)
-build_number = 0
-if response.status_code == 200:
-    commit_data = response.json()
-    if commit_data:
-        for commit in commit_data:
-            commit_message = commit['commit']['message']
-            build_match = re.search(r'\bGame [Uu]pdate \((\d+)(?: \(\d+\))?\b', commit_message)
-            if build_match:
-                build_number = int(build_match.group(1))
-                break
+# Generate offsets.h regardless of updates
+header_content = """#pragma once
+#include <cstdint>
 
-# Load or create destination data
-if os.path.exists(dest_path):
-    with open(dest_path, 'r') as dest_file:
-        dest_data = json.load(dest_file)
-else:
-    dest_data = {"build_number": 0}
+namespace offsets {
+    constexpr auto build_number = %(build_number)d;
+    constexpr auto dwBuildNumber = 0x%(dwBuildNumber)X;
+    constexpr auto dwLocalPlayerController = 0x%(dwLocalPlayerController)X;
+    constexpr auto dwEntityList = 0x%(dwEntityList)X;
+    constexpr auto dwViewMatrix = 0x%(dwViewMatrix)X;
+    constexpr auto dwPlantedC4 = 0x%(dwPlantedC4)X;
+    constexpr auto m_iHealth = 0x%(m_iHealth)X;
+    constexpr auto m_iTeamNum = 0x%(m_iTeamNum)X;
+    constexpr auto m_Glow = 0xBA0;
+    constexpr auto m_glowColorOverride = 0x1B78;
+    constexpr auto m_bGlowing = 0x1B80;
+    constexpr auto m_flFlashDuration = 0x1468;
+    constexpr auto m_iIDEntIndex = 0x1544;
+    constexpr auto m_vOldOrigin = 0x%(m_vOldOrigin)X;
+    constexpr auto attack = 0x1738B60;
+    constexpr auto flFlashDuration = 0x1468;
+    constexpr auto m_pCameraServices = 0x11E0;
+    constexpr auto m_iFOV = 0x210;
+    constexpr auto m_bIsScoped = 0x23E8;
+    constexpr auto m_fFlags = 0x3EC;
+    constexpr auto m_hPlayerPawn = 0x80C;
+}""" % dest_data
 
-if dest_data.get("build_number") == build_number and build_number != 0:
-    print("There are no updates in the remote repository")
-    sys.exit(0)
+# Write the header file
+with open(header_path, 'w') as header_file:
+    header_file.write(header_content)
 
-dest_data["build_number"] = build_number
-
-# Update only the essential offsets that match the example repository
-dest_data["dwBuildNumber"] = source_data["engine2.dll"]["dwBuildNumber"]
-dest_data["dwLocalPlayerController"] = source_data["client.dll"]["dwLocalPlayerController"]
-dest_data["dwEntityList"] = source_data["client.dll"]["dwEntityList"]
-dest_data["dwViewMatrix"] = source_data["client.dll"]["dwViewMatrix"]
-dest_data["dwPlantedC4"] = source_data["client.dll"]["dwPlantedC4"]
-
-# Save updated offsets
-with open(dest_path, 'w') as dest_file:
-    json.dump(dest_data, dest_file, indent=4)
-
-print("Offsets updated in the local file.")
+print("Header file generated successfully.")
