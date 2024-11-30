@@ -5,7 +5,7 @@ namespace offsets {
     inline constexpr auto build_number = 14057;
     inline constexpr auto dwBuildNumber = 0x531BE4;
     inline constexpr auto dwLocalPlayerController = 0x1A41FD0;
-    inline constexpr auto dwLocalPlayerPawn = 0x1A41FD0;  // Using controller offset as base
+    inline constexpr auto dwLocalPlayer = 0x1A0C310;  // Local player pawn offset
     inline constexpr auto dwEntityList = 0x19F2488;
     inline constexpr auto dwViewMatrix = 0x1A54550;
     inline constexpr auto dwPlantedC4 = 0x1A59ED0;
