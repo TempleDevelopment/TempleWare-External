@@ -19,7 +19,7 @@ jobs:
     - name: Building project
       run: |
         dir
-        msbuild /m /p:Configuration=Release /p:Platform=x64 /p:SolutionDir=${{github.workspace}}\ TempleWare-External.sln
+        msbuild /m /p:Configuration=Release /p:Platform=x64 /p:SolutionDir=${{github.workspace}}\TempleWare-External.sln
 
     - name: Archive artifacts
       uses: actions/upload-artifact@v4
