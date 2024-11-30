@@ -1,88 +1,60 @@
 #!/usr/bin/env python3
-import json
-import os
+import sys
 import requests
+import json
+import re
+import os
 from pathlib import Path
 
-# Paths
-OFFSETS_H_PATH = Path('TempleWare-External/source/offsets/offsets.h')
+# URLs for fetching offsets
+source_url = "https://raw.githubusercontent.com/a2x/cs2-dumper/main/output/offsets.json"
+commits_url = "https://api.github.com/repos/a2x/cs2-dumper/commits"
 
-def fetch_latest_offsets():
-    """Fetch latest offsets from cs2-dumper GitHub"""
-    try:
-        # Fetch client.dll offsets from the raw GitHub content
-        response = requests.get('https://raw.githubusercontent.com/a2x/cs2-dumper/master/output/client_dll.json')
-        response.raise_for_status()
-        return response.json()
-    except Exception as e:
-        print(f"Error fetching offsets: {e}")
-        return None
+script_dir = Path(__file__).parent
+dest_path = script_dir / "offsets" / "offsets.json"
 
-def process_nested_offsets(data, prefix=""):
-    """Process nested offset structure recursively"""
-    result = []
-    for key, value in sorted(data.items()):
-        if isinstance(value, dict):
-            # Recursively process nested structures
-            nested = process_nested_offsets(value, f"{prefix}{key}_")
-            result.extend(nested)
-        elif isinstance(value, (int, str)):
-            # Convert string hex values to integers
-            if isinstance(value, str):
-                try:
-                    if value.startswith('0x'):
-                        value = int(value, 16)
-                    else:
-                        value = int(value)
-                except ValueError:
-                    continue
-            # Format the offset name to be C++ friendly
-            cpp_name = f"{prefix}{key}".upper()
-            cpp_name = cpp_name.replace('.', '_').replace('[', '_').replace(']', '')
-            result.append((cpp_name, value))
-    return result
+# Create offsets directory if it doesn't exist
+os.makedirs(os.path.dirname(dest_path), exist_ok=True)
 
-def update_offsets():
-    """Update offsets.h with new values"""
-    try:
-        data = fetch_latest_offsets()
-        if not data:
-            return False
+# Fetch the source JSON
+source_response = requests.get(source_url)
+source_data = source_response.json()
 
-        # Create offsets.h content
-        content = [
-            '#pragma once',
-            '#include <cstddef>',
-            '',
-            'namespace offsets {',
-            '    // Auto-generated offsets from cs2-dumper',
-            '    // Source: https://github.com/a2x/cs2-dumper',
-            ''
-        ]
+# Fetch build Number
+response = requests.get(commits_url)
+build_number = 0
+if response.status_code == 200:
+    commit_data = response.json()
+    if commit_data:
+        for commit in commit_data:
+            commit_message = commit['commit']['message']
+            build_match = re.search(r'\bGame [Uu]pdate \((\d+)(?: \(\d+\))?\b', commit_message)
+            if build_match:
+                build_number = int(build_match.group(1))
+                break
 
-        # Process all offsets recursively
-        all_offsets = process_nested_offsets(data)
+# Load or create destination data
+if os.path.exists(dest_path):
+    with open(dest_path, 'r') as dest_file:
+        dest_data = json.load(dest_file)
+else:
+    dest_data = {"build_number": 0}
 
-        # Add each offset with a comment for its hex value
-        for name, value in all_offsets:
-            content.append(f'    constexpr std::ptrdiff_t {name} = 0x{value:X};  // {hex(value)}')
+if dest_data.get("build_number") == build_number and build_number != 0:
+    print("There are no updates in the remote repository")
+    sys.exit(0)
 
-        content.extend(['', '}  // namespace offsets'])
+dest_data["build_number"] = build_number
 
-        # Ensure directory exists
-        OFFSETS_H_PATH.parent.mkdir(parents=True, exist_ok=True)
+# Update only the essential offsets that match the example repository
+dest_data["dwBuildNumber"] = source_data["engine2.dll"]["dwBuildNumber"]
+dest_data["dwLocalPlayerController"] = source_data["client.dll"]["dwLocalPlayerController"]
+dest_data["dwEntityList"] = source_data["client.dll"]["dwEntityList"]
+dest_data["dwViewMatrix"] = source_data["client.dll"]["dwViewMatrix"]
+dest_data["dwPlantedC4"] = source_data["client.dll"]["dwPlantedC4"]
 
-        # Write the file
-        with open(OFFSETS_H_PATH, 'w') as f:
-            f.write('\n'.join(content))
+# Save updated offsets
+with open(dest_path, 'w') as dest_file:
+    json.dump(dest_data, dest_file, indent=4)
 
-        print(f"Successfully updated offsets ({len(all_offsets)} offsets written)")
-        return True
-    except Exception as e:
-        print(f"Error updating offsets: {e}")
-        return False
-
-if __name__ == "__main__":
-    if not update_offsets():
-        print("Failed to update offsets")
-        exit(1)
+print("Offsets updated in the local file.")
