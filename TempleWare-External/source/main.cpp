@@ -9,12 +9,26 @@
 #include "threads/threads.h"
 
 #include <thread>
+#include <cstdlib>
+#include <filesystem>
+#include <iostream>
 
 int __stdcall wWinMain(
     HINSTANCE instance,
     HINSTANCE previousInstance,
     PWSTR arguments,
     int commandShow) {
+
+    // Update offsets before initializing memory
+    const char* updateScript = "../../update_offsets.py";
+    if (!std::filesystem::exists(updateScript)) {
+        MessageBoxA(NULL, "Could not find update_offsets.py", "Offset Update Error", MB_ICONERROR);
+        return EXIT_FAILURE;
+    }
+
+    if (system((std::string("python \"") + updateScript + "\"").c_str()) != 0) {
+        MessageBoxA(NULL, "Failed to update offsets. Using cached values.", "Offset Update Warning", MB_ICONWARNING);
+    }
 
     const auto memory = Memory("cs2.exe");
 
