@@ -15,5 +15,10 @@
     "m_iIDEntIndex": 0x1544,
     "m_vOldOrigin": 4724,
     "attack": 0x1738B60,
-    "flFlashDuration": 0x1468
+    "flFlashDuration": 0x1468,
+    "m_pCameraServices": 0x11E0,
+    "m_iFOV": 0x210,
+    "m_bIsScoped": 0x23E8,
+    "m_fFlags": 0x3EC,
+    "m_hPlayerPawn": 0x80C
 }
