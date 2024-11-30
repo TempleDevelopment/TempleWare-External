@@ -5,15 +5,23 @@ namespace offsets {
     // Auto-generated offsets from cs2-dumper
     // Source: https://github.com/a2x/cs2-dumper
 
-    constexpr std::ptrdiff_t CLIENT_DLL_CLASSES_ACTIVEMODELCONFIG_T_FIELDS_M_ASSOCIATEDENTITIES = 0x38;  // 0x38
-    constexpr std::ptrdiff_t CLIENT_DLL_CLASSES_ACTIVEMODELCONFIG_T_FIELDS_M_ASSOCIATEDENTITYNAMES = 0x50;  // 0x50
-    constexpr std::ptrdiff_t CLIENT_DLL_CLASSES_ACTIVEMODELCONFIG_T_FIELDS_M_HANDLE = 0x28;  // 0x28
-    constexpr std::ptrdiff_t CLIENT_DLL_CLASSES_ACTIVEMODELCONFIG_T_FIELDS_M_NAME = 0x30;  // 0x30
-    constexpr std::ptrdiff_t CLIENT_DLL_CLASSES_CANIMGRAPHNETWORKEDVARIABLES_FIELDS_M_OWNERONLYPREDNETBOOLVARIABLES = 0xF8;  // 0xf8
-    constexpr std::ptrdiff_t CLIENT_DLL_CLASSES_CANIMGRAPHNETWORKEDVARIABLES_FIELDS_M_OWNERONLYPREDNETBYTEVARIABLES = 0x110;  // 0x110
-    constexpr std::ptrdiff_t CLIENT_DLL_CLASSES_CANIMGRAPHNETWORKEDVARIABLES_FIELDS_M_OWNERONLYPREDNETFLOATVARIABLES = 0x188;  // 0x188
-    constexpr std::ptrdiff_t CLIENT_DLL_CLASSES_CANIMGRAPHNETWORKEDVARIABLES_FIELDS_M_OWNERONLYPREDNETGLOBALSYMBOLVARIABLES = 0x1D0;  // 0x1d0
-    constexpr std::ptrdiff_t CLIENT_DLL_CLASSES_CANIMGRAPHNETWORKEDVARIABLES_FIELDS_M_OWNERONLYPREDNETINTVARIABLES = 0x140;  // 0x140
+    // Game-specific offsets
+    constexpr std::ptrdiff_t dwBuildNumber = 5446628;
+    constexpr std::ptrdiff_t dwLocalPlayerController = 27533264;
+    constexpr std::ptrdiff_t dwLocalPlayerPawn = 27322792;
+    constexpr std::ptrdiff_t dwEntityList = 27206792;
+    constexpr std::ptrdiff_t dwViewMatrix = 27608400;
+    constexpr std::ptrdiff_t dwPlantedC4 = 27631312;
+    constexpr std::ptrdiff_t m_iHealth = 804;
+    constexpr std::ptrdiff_t m_iTeamNum = 963;
+    constexpr std::ptrdiff_t m_Glow = 0xBA0;
+    constexpr std::ptrdiff_t m_glowColorOverride = 0x1B78;
+    constexpr std::ptrdiff_t m_bGlowing = 0x1B80;
+    constexpr std::ptrdiff_t m_flFlashDuration = 0x1468;
+    constexpr std::ptrdiff_t m_iIDEntIndex = 0x1544;
+    constexpr std::ptrdiff_t m_vOldOrigin = 4724;
+    constexpr std::ptrdiff_t attack = 0x1738B60;
+    constexpr std::ptrdiff_t flFlashDuration = 0x1468;
     constexpr std::ptrdiff_t CLIENT_DLL_CLASSES_CANIMGRAPHNETWORKEDVARIABLES_FIELDS_M_OWNERONLYPREDNETQUATERNIONVARIABLES = 0x1B8;  // 0x1b8
     constexpr std::ptrdiff_t CLIENT_DLL_CLASSES_CANIMGRAPHNETWORKEDVARIABLES_FIELDS_M_OWNERONLYPREDNETUINT16VARIABLES = 0x128;  // 0x128
     constexpr std::ptrdiff_t CLIENT_DLL_CLASSES_CANIMGRAPHNETWORKEDVARIABLES_FIELDS_M_OWNERONLYPREDNETUINT32VARIABLES = 0x158;  // 0x158
