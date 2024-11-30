@@ -12,7 +12,7 @@ commits_url = "https://api.github.com/repos/a2x/cs2-dumper/commits"
 
 script_dir = Path(__file__).parent
 dest_path = script_dir / "offsets" / "offsets.json"
-header_path = script_dir / "source" / "offsets" / "offsets.h"
+header_path = script_dir / "TempleWare-External" / "source" / "offsets" / "offsets.h"
 
 # Create directories if they don't exist
 os.makedirs(os.path.dirname(dest_path), exist_ok=True)
@@ -54,9 +54,15 @@ namespace offsets {
 with open(header_path, 'w') as header_file:
     header_file.write(header_content)
 
-# Also remove the old offsets.h if it exists
-old_header_path = script_dir / "source" / "offsets.h"
-if old_header_path.exists():
-    os.remove(old_header_path)
+# Clean up any old files
+old_paths = [
+    script_dir / "source" / "offsets" / "offsets.h",
+    script_dir / "source" / "offsets.h",
+    script_dir / "TempleWare-External" / "source" / "offsets.h"
+]
+
+for old_path in old_paths:
+    if old_path.exists():
+        os.remove(old_path)
 
 print("Header file generated successfully.")
