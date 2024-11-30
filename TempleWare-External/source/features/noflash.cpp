@@ -5,7 +5,7 @@
 namespace features {
     void NoFlash::Run(const Memory& memory) noexcept {
         if (globals::NoFlashEnabled) {
-            std::uintptr_t localPlayer = memory.Read<std::uintptr_t>(globals::client + offsets::dwLocalPlayerPawn);
+            std::uintptr_t localPlayer = memory.Read<std::uintptr_t>(globals::client + offsets::dwLocalPlayer);
             if (localPlayer) {
                 float flashDuration = memory.Read<float>(localPlayer + offsets::flFlashDuration);
                 if (flashDuration > 0.0f) {

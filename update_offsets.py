@@ -30,7 +30,7 @@ namespace offsets {
     inline constexpr auto build_number = %(build_number)d;
     inline constexpr auto dwBuildNumber = 0x%(dwBuildNumber)X;
     inline constexpr auto dwLocalPlayerController = 0x%(dwLocalPlayerController)X;
-    inline constexpr auto dwLocalPlayerPawn = 0x%(dwLocalPlayerController)X;  // Using controller offset as base
+    inline constexpr auto dwLocalPlayer = 0x%(dwLocalPlayer)X;  // Local player pawn
     inline constexpr auto dwEntityList = 0x%(dwEntityList)X;
     inline constexpr auto dwViewMatrix = 0x%(dwViewMatrix)X;
     inline constexpr auto dwPlantedC4 = 0x%(dwPlantedC4)X;

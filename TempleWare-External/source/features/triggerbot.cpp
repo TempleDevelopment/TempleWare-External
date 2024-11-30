@@ -2,7 +2,7 @@
 #include "../offsets/globals.h"
 #include "../offsets/offsets.h"
 #include <thread>
-#include <Windows.h> 
+#include <Windows.h>
 
 namespace features {
     void TriggerBot::Run(const Memory& memory) noexcept {
@@ -32,7 +32,7 @@ namespace features {
                 }
             }
 
-            std::uintptr_t localPlayer = memory.Read<std::uintptr_t>(globals::client + offsets::dwLocalPlayerPawn);
+            std::uintptr_t localPlayer = memory.Read<std::uintptr_t>(globals::client + offsets::dwLocalPlayer);
             BYTE team = memory.Read<BYTE>(localPlayer + offsets::m_iTeamNum);
 
             if (!globals::TriggerBotIgnoreFlash) {

@@ -1,0 +1,35 @@
+# Offset Updates Required
+
+## Missing Offsets to Add
+- [ ] dwBuildNumber (from engine2.dll)
+- [ ] dwLocalPlayerController (from client.dll)
+- [ ] dwEntityList (from client.dll)
+- [ ] dwViewMatrix (from client.dll)
+- [ ] dwPlantedC4 (from client.dll)
+- [ ] m_ArmorValue
+- [ ] m_bIsDefusing
+- [ ] m_flC4Blow
+- [ ] m_flFlashOverlayAlpha
+- [ ] m_flNextBeep
+- [ ] m_flTimerLength
+- [ ] m_hPlayerPawn
+- [ ] m_iAccount
+- [ ] m_iHealth
+- [ ] m_iTeamNum
+- [ ] m_pClippingWeapon
+- [ ] m_pGameSceneNode
+- [ ] m_pInGameMoneyServices
+- [ ] m_sSanitizedPlayerName
+- [ ] m_szName
+- [ ] m_vOldOrigin
+- [ ] m_vecAbsOrigin
+
+## Format Changes Required
+- [ ] Convert all offset values from hexadecimal to decimal
+- [ ] Add build_number tracking to offsets.json
+- [ ] Update update_offsets.py to match example implementation
+
+## Implementation Changes
+- [ ] Create offsets.json file for storing decimal values
+- [ ] Modify update_offsets.py to fetch from cs2-dumper correctly
+- [ ] Update offsets.h generation to use new format

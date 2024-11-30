@@ -9,7 +9,7 @@ namespace features
 		if (!globals::BunnyHopEnabled)
 			return;
 
-		std::uintptr_t localPlayer = memory.Read<std::uintptr_t>(globals::client + offsets::dwLocalPlayerPawn);
+		std::uintptr_t localPlayer = memory.Read<std::uintptr_t>(globals::client + offsets::dwLocalPlayer);
 		if (localPlayer == 0)
 			return;
 

@@ -4,7 +4,7 @@
 
 namespace features {
     void FOVManager::AdjustFOV(const Memory& memory) noexcept {
-        std::uintptr_t localPlayer = memory.Read<std::uintptr_t>(globals::client + offsets::dwLocalPlayerPawn);
+        std::uintptr_t localPlayer = memory.Read<std::uintptr_t>(globals::client + offsets::dwLocalPlayer);
         if (!localPlayer) return;
 
         std::uintptr_t cameraServices = memory.Read<std::uintptr_t>(localPlayer + offsets::m_pCameraServices);
