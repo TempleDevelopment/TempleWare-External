@@ -2,7 +2,18 @@
     "build_number": 14057,
     "dwBuildNumber": 5446628,
     "dwLocalPlayerController": 27533264,
+    "dwLocalPlayerPawn": 27322792,
     "dwEntityList": 27206792,
     "dwViewMatrix": 27608400,
-    "dwPlantedC4": 27631312
+    "dwPlantedC4": 27631312,
+    "m_iHealth": 804,
+    "m_iTeamNum": 963,
+    "m_Glow": 0xBA0,
+    "m_glowColorOverride": 0x1B78,
+    "m_bGlowing": 0x1B80,
+    "m_flFlashDuration": 0x1468,
+    "m_iIDEntIndex": 0x1544,
+    "m_vOldOrigin": 4724,
+    "attack": 0x1738B60,
+    "flFlashDuration": 0x1468
 }
