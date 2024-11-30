@@ -18,11 +18,12 @@ jobs:
 
     - name: Building project
       run: |
-        msbuild /m /p:Configuration=Release /p:Platform=x64 TempleWare-External.sln
+        dir
+        msbuild /m /p:Configuration=Release /p:Platform=x64 /p:SolutionDir=${{github.workspace}}\ TempleWare-External.sln
 
     - name: Archive artifacts
       uses: actions/upload-artifact@v4
       with:
         name: Compiled-Binaries
         path: |
-          x64/Release/TempleWare-External.exe
+          TempleWare-External/x64/Release/TempleWare-External.exe
