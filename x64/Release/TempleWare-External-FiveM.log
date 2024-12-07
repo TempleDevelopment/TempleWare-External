@@ -1,0 +1,23 @@
+﻿  menu.cpp
+D:\projects\C++\TempleWare-External-FiveM\TempleWare-External-FiveM\source\sdk\GameSDK\GameSDK.h(86,2): warning C4091: 'extern ': ignored on left of 'CBone' when no variable is declared
+  (compiling source file 'source/menu/menu.cpp')
+  
+  visuals.cpp
+D:\projects\C++\TempleWare-External-FiveM\TempleWare-External-FiveM\source\sdk\GameSDK\GameSDK.h(86,2): warning C4091: 'extern ': ignored on left of 'CBone' when no variable is declared
+  (compiling source file 'source/features/visuals.cpp')
+  
+D:\projects\C++\TempleWare-External-FiveM\TempleWare-External-FiveM\source\features\visuals.cpp(21,76): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
+D:\projects\C++\TempleWare-External-FiveM\TempleWare-External-FiveM\source\features\visuals.cpp(21,53): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
+D:\projects\C++\TempleWare-External-FiveM\TempleWare-External-FiveM\source\features\visuals.cpp(26,148): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\projects\C++\TempleWare-External-FiveM\TempleWare-External-FiveM\source\features\visuals.cpp(27,133): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\projects\C++\TempleWare-External-FiveM\TempleWare-External-FiveM\source\features\visuals.cpp(83,63): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
+D:\projects\C++\TempleWare-External-FiveM\TempleWare-External-FiveM\source\features\visuals.cpp(139,100): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\projects\C++\TempleWare-External-FiveM\TempleWare-External-FiveM\source\features\visuals.cpp(139,80): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\projects\C++\TempleWare-External-FiveM\TempleWare-External-FiveM\source\features\visuals.cpp(142,83): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Generating code
+D:\projects\C++\TempleWare-External-FiveM\TempleWare-External-FiveM\source\features\features.cpp(64): warning C4715: 'CFramework::AimBot': not all control paths return a value
+  97 of 2153 functions ( 4.5%) were compiled, the rest were copied from previous compilation.
+    47 functions were new in current compilation
+    97 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  TempleWare-External-FiveM.vcxproj -> D:\projects\C++\TempleWare-External-FiveM\x64\Release\TempleWare-External-FiveM.exe
